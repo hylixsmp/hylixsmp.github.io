@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HylixSMP</title>
+    <style>
+        body {
+            font-family: 'Minecraft', Arial;
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+        }
+        /* Article list styling */
+        .article-link {
+            color: #55FF55;
+            display: block;
+            margin: 10px 0;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        /* Article content styling */
+        #article-content {
+            white-space: pre-line; /* Keeps your line breaks from .md files */
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border: 2px solid #555;
+        }
+        /* Button styling */
+        .btn {
+            background: #555;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            margin: 5px;
+            font-family: 'Minecraft';
+        }
+    </style>
+</head>
+<body>
+    <!-- DYNAMIC CONTENT -->
+    <div id="app">
+        <!-- Content loads here -->
+    </div>
+
+    <script>
+        // ===== ROUTER ===== //
+        const params = new URLSearchParams(window.location.search);
+
+        // Route 1: /articles?=newarticle --> GitHub file creation
+        if (params.has('=newarticle')) {
+            window.location.href = 
+                'https://github.com/hylixsmp/hylixsmp.github.io/new/main/articles?filename=NEW-ARTICLE.md';
+        }
+
+        // Route 2: /article?v=name --> Show article
+        else if (params.has('v')) {
+            const articleName = params.get('v');
+            fetch(`articles/${articleName}.md`)
+                .then(res => res.text())
+                .then(text => {
+                    document.getElementById('app').innerHTML = `
+                        <h1>${articleName.replace(/-/g, ' ')}</h1>
+                        <div id="article-content">${text}</div>
+                        <a href="/" class="btn">🏠 Home</a>
+                    `;
+                })
+                .catch(() => {
+                    document.getElementById('app').innerHTML = `
+                        <h1>404</h1>
+                        <p>Article "${articleName}" not found!</p>
+                        <a href="/" class="btn">🏠 Home</a>
+                    `;
+                });
+        }
+
+        // Route 3: / (Home) --> List articles
+        else {
+            // Hardcoded article list (GitHub Pages can't auto-scan /articles/)
+            document.getElementById('app').innerHTML = `
+                <h1>📜 Articles</h1>
+                <a href="/article?v=welcome" class="article-link">Welcome</a>
+                <a href="/article?v=rules" class="article-link">Server Rules</a>
+                <br>
+                <a href="/articles?=newarticle" class="btn">➕ New Article</a>
+            `;
+        }
+    </script>
+</body>
+</html>
