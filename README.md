@@ -1,1 +1,3 @@
-# hylixsmp.github.io
+---
+redirect_to: /home
+---
