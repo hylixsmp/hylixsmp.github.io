@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HylixSMP | Minecraft Survival Multiplayer</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://assets.codepen.io/1213385/MinecraftRegular-Bmg3.woff') format('woff');
+        }
+        
+        body {
+            font-family: 'Minecraft', monospace;
+            background: #1a1a1a url('https://i.imgur.com/JWZQKlY.png') fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            image-rendering: pixelated;
+        }
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-bottom: 4px solid #555;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            color: #55FF55;
+            text-shadow: 3px 3px 0 #000;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border: 2px solid #555;
+        }
+        
+        .nav-links a:hover {
+            background: #555;
+        }
+        
+        .hero {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            color: #FFAA00;
+            text-shadow: 5px 5px 0 #000;
+            margin: 0;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #55FF55;
+            color: #000;
+            padding: 12px 24px;
+            margin: 20px;
+            border: 3px solid #000;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background: #AAFFAA;
+            transform: scale(1.05);
+        }
+        
+        .server-info {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            text-align: center;
+            border-top: 4px solid #555;
+            border-bottom: 4px solid #555;
+        }
+        
+        .info-box {
+            display: inline-block;
+            background: #333;
+            padding: 20px;
+            margin: 10px;
+            border: 3px solid #555;
+            width: 200px;
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            border-top: 4px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">HylixSMP</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/rules">Rules</a>
+            <a href="/gallery">Gallery</a>
+            <a href="https://discord.gg/YOUR_INVITE">Discord</a>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>WELCOME TO HYLIXSMP</h1>
+        <p>The ultimate Minecraft survival multiplayer experience with custom features, friendly community, and no pay-to-win!</p>
+        <a href="https://discord.gg/YOUR_INVITE" class="btn">JOIN OUR DISCORD</a>
+        <div>
+            <strong>Server IP:</strong> play.hylixsmp.com
+        </div>
+    </div>
+    
+    <!-- Server Info Section -->
+    <div class="server-info">
+        <h2>SERVER FEATURES</h2>
+        <div class="info-box">
+            <h3>🎮 Version</h3>
+            <p>1.21.5</p>
+        </div>
+        <div class="info-box">
+            <h3>🏆 Custom Items</h3>
+            <p>Unique weapons & tools</p>
+        </div>
+        <div class="info-box">
+            <h3>💰 Economy</h3>
+            <p>Player-run shops</p>
+        </div>
+        <div class="info-box">
+            <h3>🎉 Events</h3>
+            <p>Weekly competitions</p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 HylixSMP - All Rights Reserved</p>
+        <p>Not affiliated with Mojang or Microsoft</p>
+    </footer>
+</body>
+</html>
