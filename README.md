@@ -1,3 +1,13 @@
 ---
-redirect_to: /home
+layout: none
 ---
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url='/home'" />
+</head>
+<body>
+    Redirecting to <a href="/home">/home</a>...
+</body>
+</html>
